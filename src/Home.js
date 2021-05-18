@@ -13,6 +13,9 @@ const Home = () => {
         // explain of this the value isn't reactive when we click the template doesn't render with the new value, so we have to make the value reactive, so when it's changes react will detect that , and re render the template
         // name = 'kenway';
         // console.log(name);
+
+        // so down here we will use the function that handle the change in the useState value so our value become reactive and change when we click the button
+        setName('kenway');
     }
     // to do this in react we use something called a hook, it's special type of function, doing a certain job like the useState one, so useState give us the way to create a reactive value and also provide us a way to change this value when ever we want
     return (
