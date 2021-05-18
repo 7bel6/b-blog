@@ -1,12 +1,18 @@
+import { useState } from 'react';
+// above we importing the hook
 const Home = () => {
     // Use state in React
-    let name = 'haider';
+    //let name = 'haider';
     // and let suppose when we click the button we want change the name
     // here the name will change in the variable but it's not gonna update inside the DOM
+
+    // ------------------ let's create react value using useState
+    // we create useState() got the init value , we put it inside an array of two var , one is the name of value , the other one is the function that will handle the change in the value.
+    const [name, setName] = useState('haider');
     const handleClick = () => {
         // explain of this the value isn't reactive when we click the template doesn't render with the new value, so we have to make the value reactive, so when it's changes react will detect that , and re render the template
-        name = 'kenway';
-        console.log(name);
+        // name = 'kenway';
+        // console.log(name);
     }
     // to do this in react we use something called a hook, it's special type of function, doing a certain job like the useState one, so useState give us the way to create a reactive value and also provide us a way to change this value when ever we want
     return (
