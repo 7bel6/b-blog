@@ -8,7 +8,7 @@ const Home = () => {
         name = 'kenway';
         console.log(name);
     }
-    
+    // to do this in react we use something called a hook, it's special type of function, doing a certain job like the useState one, so useState give us the way to create a reactive value and also provide us a way to change this value when ever we want
     return (
         <div className="home">
             <h2>Hompage</h2>
