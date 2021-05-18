@@ -5,7 +5,7 @@ const Home = () => {
     // here the name will change in the variable but it's not gonna update inside the DOM
     const handleClick = () => {
         name = 'kenway';
-        console.log('name');
+        console.log(name);
     }
     
     return (
