@@ -15,7 +15,9 @@ const Home = () => {
     // and we pass the data in it
     return (
         <div className="home">
-            <Bloglist blogs={blogs}/>
+            <Bloglist blogs={blogs} title="all blogs"/>
+            {/* Demonstarte reusing props , let's show only mario blogs */}
+            <Bloglist blogs={blogs.filter((blog) => blog.author === 'mario')} title="Mairo blogs"/>
         </div>
     );
 }
