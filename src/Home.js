@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Bloglist from './Bloglist';
 // above we importing the hook
 const Home = () => {
@@ -19,11 +19,17 @@ const Home = () => {
     // we will use props to pass data from this component to child comp.
     // we gonna create a property in child comp tag we can call it whatever we want
     // and we pass the data in it
+
+    // ------------- useEffect hook , we don't need to store it in const, it's don't return value
+    useEffect(() => {
+        // we might use this , for fetch data , or authintication process
+        console.log('useEffect on the way');
+    });
     return (
         <div className="home">
             <Bloglist blogs={blogs} title="all blogs" handleDelete={handleDelete}/>
         </div>
     );
 }
-
+// useEffect hook is hook that runs everytime we render , everytime we refresh the browser page
 export default Home;
