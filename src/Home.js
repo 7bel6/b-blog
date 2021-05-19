@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Bloglist from './Bloglist';
 // above we importing the hook
 const Home = () => {
     // we creating blogs state value, because blogs change added or deleted , array of blogs
@@ -8,17 +9,13 @@ const Home = () => {
         { title: 'Welcome party!', body: 'lorem ipsum...', author: 'yoshi', id: 2 },
         { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'mario', id: 3 }
     ]);
+
+    // we will use props to pass data from this component to child comp.
+    // we gonna create a property in child comp tag we can call it whatever we want
+    // and we pass the data in it
     return (
-        // we need to find a way to cycle through our array so we can output our list
-        // we use map method which is cycle through array, we need to return an itterate template that contain and output each item in form of this template
         <div className="home">
-            {/* we use arrow function inside map method to define the template of outputing these blogs */}
-            {blogs.map((blog) => (
-                <div className="blog-review" key={blog.id}>
-                    <h2>{ blog.title }</h2>
-                    <p>Author : { blog.author }</p>
-                </div>
-            ))}
+            <Bloglist blogs={blogs}/>
         </div>
     );
 }
