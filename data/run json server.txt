@@ -1,0 +1,1 @@
+yarn json-server --watch <folder/file.json> --port 8000
