@@ -18,13 +18,17 @@ const Home = () => {
                 return res.json();
             })
             .then(data => {
-                console.log(data)
+                console.log(data);
+                // now we update our state with the data
+                setBlogs(data);
             });
     },[]);
 
     return (
         <div className="home">
-            {/* <Bloglist blogs={blogs} title="all blogs" handleDelete={handleDelete}/> */}
+            {/* we put this statement so in fraction of time to get the data we don't get error of maping array of null */}
+            {/* the logic behind that is easy we put a condition null=false so if null it will render because we got && operator when it's turn true got data it's well run the code */}
+            {blogs && <Bloglist blogs={blogs} title="all blogs" handleDelete={handleDelete}/>}
         </div>
     );
 }
