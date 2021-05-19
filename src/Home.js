@@ -24,12 +24,13 @@ const Home = () => {
     useEffect(() => {
         // we might use this , for fetch data , or authintication process
         console.log('useEffect on the way');
-    });
+        // sometimes we don't want this function to run in every render so we pass a depandecy array, [] empty array make the function only run for the intial render, we can add state values that trigger render to change in this array
+    },[]);
     return (
         <div className="home">
             <Bloglist blogs={blogs} title="all blogs" handleDelete={handleDelete}/>
         </div>
     );
 }
-// useEffect hook is hook that runs everytime we render , everytime we refresh the browser page
+// useEffect hook is hook that runs everytime we render 
 export default Home;
