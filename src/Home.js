@@ -5,11 +5,6 @@ const Home = () => {
     // when we succesfully fetch the data, we gonna update the state with the data
     const [blogs, setBlogs] = useState(null);
 
-    const handleDelete = (id) => {
-        const newBlogs = blogs.filter(blog => blog.id !== id);
-        setBlogs(newBlogs);
-    }
-
     useEffect(() => {
         // using fetch request here run on intial render
         fetch('http://localhost:8000/blogs')
@@ -28,7 +23,7 @@ const Home = () => {
         <div className="home">
             {/* we put this statement so in fraction of time to get the data we don't get error of maping array of null */}
             {/* the logic behind that is easy we put a condition null=false so if null it will render because we got && operator when it's turn true got data it's well run the code */}
-            {blogs && <Bloglist blogs={blogs} title="all blogs" handleDelete={handleDelete}/>}
+            {blogs && <Bloglist blogs={blogs} title="all blogs"/>}
         </div>
     );
 }
