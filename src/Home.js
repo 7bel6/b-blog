@@ -4,6 +4,8 @@ import Bloglist from './Bloglist';
 const Home = () => {
     // when we succesfully fetch the data, we gonna update the state with the data
     const [blogs, setBlogs] = useState(null);
+    const [isPending, setIsPending] = useState(true);
+
 
     useEffect(() => {
         // using fetch request here run on intial render
@@ -16,6 +18,7 @@ const Home = () => {
                 console.log(data);
                 // now we update our state with the data
                 setBlogs(data);
+                setIsPending(false);
             });
     },[]);
 
@@ -23,6 +26,7 @@ const Home = () => {
         <div className="home">
             {/* we put this statement so in fraction of time to get the data we don't get error of maping array of null */}
             {/* the logic behind that is easy we put a condition null=false so if null it will render because we got && operator when it's turn true got data it's well run the code */}
+            { isPending && <div>Loading ... </div> }
             {blogs && <Bloglist blogs={blogs} title="all blogs"/>}
         </div>
     );

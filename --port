@@ -1,0 +1,18 @@
+yarn run v1.22.5
+$ /home/bebo/Documents/Dev/React/b-blog/node_modules/.bin/json-server --watch 8000
+
+  \{^_^}/ hi!
+
+  Loading 8000
+Error: Unsupported source 8000
+    at /home/bebo/Documents/Dev/React/b-blog/node_modules/json-server/lib/cli/utils/load.js:79:13
+    at new Promise (<anonymous>)
+    at module.exports (/home/bebo/Documents/Dev/React/b-blog/node_modules/json-server/lib/cli/utils/load.js:38:10)
+    at start (/home/bebo/Documents/Dev/React/b-blog/node_modules/json-server/lib/cli/run.js:112:12)
+    at module.exports (/home/bebo/Documents/Dev/React/b-blog/node_modules/json-server/lib/cli/run.js:149:3)
+    at module.exports (/home/bebo/Documents/Dev/React/b-blog/node_modules/json-server/lib/cli/index.js:86:3)
+    at Object.<anonymous> (/home/bebo/Documents/Dev/React/b-blog/node_modules/json-server/lib/cli/bin.js:6:14)
+    at Module._compile (internal/modules/cjs/loader.js:999:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32)
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
