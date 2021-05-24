@@ -7,6 +7,7 @@ const Home = () => {
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null)
 
+    // We might need this logic to be used in deffrint places so we make it in own javascript file and make reusable , and that know as custom hook in react
     useEffect(() => {
         // using fetch request here run on intial render
         fetch('http://localhost:8000/blogs')
