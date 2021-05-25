@@ -22,6 +22,10 @@ function App() {
             <Route path='/create'>
               <Create />
             </Route>
+            {/* We want the route to take the ip of the blog showen , and this is the route parametrs */}
+            <Route path='/blogs/'>
+              <Create />
+            </Route>
           </Switch>
         </div>
       </div>
