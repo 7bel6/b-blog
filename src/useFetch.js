@@ -6,8 +6,12 @@ const useFetch = (url) => {
     const [error, setError] = useState(null)
 
     useEffect(() => {
+        // Create abort the process functionality
+        const abortCont = new AbortController();
+
         // using fetch request here run on intial render
-        fetch(url)
+        // associte the abort controller with the fetch so we can call it and abort the fetch
+        fetch(url, { signal: abortCont.signal })
         // when the respones resolve, we get res object this is not the data just a respone object, in order to get the data we have to do something with this object
             .then(res => {
                 if(!res.ok){
@@ -23,10 +27,19 @@ const useFetch = (url) => {
                 setError(null);
             })
             .catch(err => {
-                setIsPending(false);
-                setError(err.message);
+                // if it's abort error don't update the state
+                if(err.name === 'AboortError'){
+                    console.log('fetch aborted')
+                }
+                else{
+                    setIsPending(false);
+                    setError(err.message);
+                }
             })
-    },[]);
+
+            // Clean up the useEffect so when the component unmounted the fetch process stops working in background and stoping error happen
+            return () => abortCont.abort();
+    },[url]);
 
     // Here we gonna return some value
     return { data , isPending, error}
