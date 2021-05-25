@@ -7,12 +7,20 @@ function App() {
   // ps: we can't use daynimc values inisde react jsx like objects or boolean values
 
   return (
-    <div className="App">
-      <Navbar />
-      <div className="content">
-        <Home />
+    // we sround our components with router
+    <Router>
+      <div className="App">
+        <Navbar />
+        <div className="content">
+          {/* Here we diced where our content go to which component when we calls another page */}
+          <Switch>
+            <Route path='/'>
+              <Home />
+            </Route>
+          </Switch>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
