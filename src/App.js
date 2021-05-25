@@ -15,8 +15,8 @@ function App() {
         <div className="content">
           {/* Here we diced where our content go to which component when we calls another page */}
           <Switch>
-            {/* Untill here it's will still show the home page because the strange logic of react as in /create it's inherit / which is for home page and react switch stop at the first match */}
-            <Route path='/'>
+            {/* Untill here it's will still show the home page because the strange logic of react as in /create it's inherit / which is for home page and react switch stop at the first match, adding exact keyword will tell react match the exact directory */}
+            <Route exact path='/'>
               <Home />
             </Route>
             <Route path='/create'>
