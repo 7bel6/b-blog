@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import Home from './Home';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Create from './Create';
+import BlogDetails from './BlogDetails';
 function App() {
   // we can write any valid javasript here before the return function
   // ps: we can't use daynimc values inisde react jsx like objects or boolean values
@@ -22,9 +23,9 @@ function App() {
             <Route path='/create'>
               <Create />
             </Route>
-            {/* We want the route to take the ip of the blog showen , and this is the route parametrs */}
-            <Route path='/blogs/'>
-              <Create />
+            {/* We want the route to take the id of the blog showen , and this is the route parametrs */}
+            <Route path='/blogs/:id'>
+              <BlogDetails />
             </Route>
           </Switch>
         </div>
