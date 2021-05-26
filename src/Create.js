@@ -5,10 +5,18 @@ const Create = () => {
     const [body,setBody] = useState('');
     const [author, setAuthor] = useState('mario')
 
+    const handleSubmit = (e) => {
+        // Prevent page refresh on submit
+        e.preventDefault();
+        // creating a blog object that will carry the submitted data and send it to our db
+        const blog = {title, body, author};
+        console.log(blog);
+    }
+
     return (
         <div className='create'>
             <h2 className="title">Add new Blog</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label>Blog Title : </label>
                 <input
                     type="text"
