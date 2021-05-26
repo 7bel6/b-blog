@@ -13,12 +13,6 @@
       "id": 2
     },
     {
-      "title": "Hiader",
-      "body": "Some Text that goes here motherfucker",
-      "author": "mario",
-      "id": 3
-    },
-    {
       "title": "Testing The Post",
       "body": "Testing The Post Testing The Post Testing The Post Testing The Post Testing The Post Testing The Post Testing The Post",
       "author": "mario",
@@ -29,12 +23,6 @@
       "body": "Testing The Post Testing The Post Testing The Post Testing The Post Testing The Post Testing The Post Testing The Post",
       "author": "mario",
       "id": 5
-    },
-    {
-      "title": "Adding new",
-      "body": "New One",
-      "author": "luigi",
-      "id": 6
     }
   ]
 }
