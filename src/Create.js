@@ -1,4 +1,6 @@
 import { useState } from "react";
+// we will redirecte the user after finish adding the blog to another page using hook
+import { useHistory } from 'react-router-dom';
 
 const Create = () => {
     const [title,setTitle] = useState('');
@@ -6,6 +8,7 @@ const Create = () => {
     const [author, setAuthor] = useState('mario')
     // loading state when we add the blog
     const [isPending, setIsPending] = useState(false);
+    const history = useHistory();
 
     const handleSubmit = (e) => {
         // Prevent page refresh on submit
@@ -24,6 +27,8 @@ const Create = () => {
         .then(() => {
             console.log("new Blog added")
             setIsPending(false);
+            // redirecte the user to home page
+            history.push('/');
         })
     }
 
