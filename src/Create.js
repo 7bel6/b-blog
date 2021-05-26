@@ -4,13 +4,27 @@ const Create = () => {
     const [title,setTitle] = useState('');
     const [body,setBody] = useState('');
     const [author, setAuthor] = useState('mario')
+    // loading state when we add the blog
+    const [isPending, setIsPending] = useState(false);
 
     const handleSubmit = (e) => {
         // Prevent page refresh on submit
         e.preventDefault();
         // creating a blog object that will carry the submitted data and send it to our db
         const blog = {title, body, author};
-        console.log(blog);
+        setIsPending(true);
+        // creating post request to the json server
+        fetch('http://localhost:8000/blogs', {
+            method: 'POST',
+            // Headers to define the kind of data we sending
+            headers: {"Content-Type":"application/json"},
+            // body to carry the data we sending, we turned it to JSON
+            body: JSON.stringify(blog)
+        })
+        .then(() => {
+            console.log("new Blog added")
+            setIsPending(false);
+        })
     }
 
     return (
@@ -40,9 +54,7 @@ const Create = () => {
                     <option value="luigi">luigi</option>
                 </select>
                 <button>Add Blog</button>
-                {/* Testing the controlled input we show here the change happens on state value */}
-                <p>{ body }</p>
-                <p>{ author }</p>
+                {isPending && <p>Loading....</p>}               
             </form>
         </div>
     );
