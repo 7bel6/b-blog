@@ -2,6 +2,8 @@ import { useState } from "react";
 
 const Create = () => {
     const [title,setTitle] = useState('');
+    const [body,setBody] = useState('');
+    const [author, setAuthor] = useState('mario')
 
     return (
         <div className='create'>
@@ -18,15 +20,21 @@ const Create = () => {
                 <label>Blog Body : </label>
                 <textarea
                     required
+                    value={body}
+                    onChange={(e) => setBody(e.target.value)}
                 ></textarea>
                 <label>Blog Author : </label>
-                <select>
+                <select
+                    value={author}
+                    onChange={(e) => setAuthor(e.target.value)}
+                >
                     <option value="mario">mario</option>
                     <option value="luigi">luigi</option>
                 </select>
                 <button>Add Blog</button>
                 {/* Testing the controlled input we show here the change happens on state value */}
-                <p>{ title }</p>
+                <p>{ body }</p>
+                <p>{ author }</p>
             </form>
         </div>
     );
