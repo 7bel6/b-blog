@@ -1,15 +1,17 @@
+import { Link } from 'react-router-dom';
+
 // statles functional component
 const Navbar = () => {
     return(
         <nav className="navbar">
             <h1>B-Blog</h1>
             <div className="links">
-                <a href="/">Home</a>
-                <a href="/create" style={{
+                <Link to="/">Home</Link>
+                <Link to="/create" style={{
                     color: "white",
                     backgroundColor: '#f1356d',
                     borderRadius: '8px'
-                }}>New Blog</a>
+                }}>New Blog</Link>
             </div>
         </nav>
     );
